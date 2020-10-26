@@ -16,3 +16,15 @@ xhrbtn.addEventListener("click", function() {
   XHR.open("GET", url);
   XHR.send();
 });
+
+fetchbtn.addEventListener("click", function() {
+  fetch(url)
+    .then(function(res) {
+      res.json().then(function(data) {
+        display.innerText = data[0];
+      })
+    })
+    .catch(function() {
+      alert("OH NO! THERE'S BEEN AN ERROR!");
+    });
+});
