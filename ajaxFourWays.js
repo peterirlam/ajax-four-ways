@@ -28,3 +28,17 @@ fetchbtn.addEventListener("click", function() {
       alert("OH NO! THERE'S BEEN AN ERROR!");
     });
 });
+
+$('#jquery').click(function() {
+  $.ajax({
+      method: "GET",
+      url: url,
+      dataType: 'json'
+    })
+    .done(function(data) {
+      $('#quote').text(data[0]);
+    })
+    .fail(function() {
+      alert("OH NO! THERE'S BEEN AN ERROR!");
+    });
+});
