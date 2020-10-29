@@ -42,3 +42,13 @@ $('#jquery').click(function() {
       alert("OH NO! THERE'S BEEN AN ERROR!");
     });
 });
+
+axiosbtn.addEventListener("click", function() {
+  axios.get(url)
+    .then(function(res) {
+      display.innerText = res.data[0];
+    })
+    .catch(function() {
+      alert("OH NO! THERE'S BEEN AN ERROR!");
+    });
+});
